@@ -4,12 +4,12 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
-  margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
 `;
 
 export const Button = styled.button`
