@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+export const Container = styled.div`
+  margin: 0 auto;
+`;
+
 export const Header = styled.header`
   position: relative;
   display: flex;

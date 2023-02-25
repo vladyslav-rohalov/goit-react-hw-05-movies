@@ -20,3 +20,15 @@ export const Image = styled.img`
   width: 300px;
   margin-right: 10px;
 `;
+
+export const UL = styled.ul`    
+border-bottom: 1px solid black;
+border-top: 1px solid black;
+}`;
+
+export const LI = styled.li`    
+margin-bottom: 10px;
+&:first-of-type {
+  margin-top: 10px;
+}
+}`;

@@ -5,7 +5,6 @@ import { List, ListItem, CastImg } from './Cast.styled';
 
 export default function Cast() {
   const [cast, setCast] = useState([]);
-  // Поменять массив на объект
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,8 +14,6 @@ export default function Cast() {
       .get(URL)
       .then(response => {
         setCast(response.data.cast);
-        console.log(typeof response.data.cast);
-        console.log(response.data.cast);
       })
       .catch(error => {
         throw new Error(error);
