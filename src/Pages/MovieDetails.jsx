@@ -9,6 +9,8 @@ import {
   DivFlex,
   UL,
   LI,
+  P,
+  Button,
 } from './MovieDetails.styled';
 
 export default function MovieDetails() {
@@ -24,6 +26,7 @@ export default function MovieDetails() {
       .get(URL)
       .then(response => {
         setMovieItem(response.data);
+        console.log(response.data);
       })
       .catch(error => {
         throw new Error(error);
@@ -33,7 +36,7 @@ export default function MovieDetails() {
   return (
     <Container>
       <Link to={backLinkHref}>
-        <button type="button">← Go back</button>
+        <Button type="button">← Go back</Button>
       </Link>
 
       {movieItem !== null && (
@@ -53,13 +56,13 @@ export default function MovieDetails() {
               </H2>
             )}
             {movieItem.vote_average > 0 && (
-              <p>User score: {Math.round(movieItem.vote_average * 10)}%</p>
+              <H3>User score: {Math.round(movieItem.vote_average * 10)}%</H3>
             )}
             <H3>Overviev</H3>
-            <p>{movieItem.overview}</p>
+            <P>{movieItem.overview}</P>
             <H3>Genres </H3>
             {movieItem.genres && (
-              <p>{movieItem.genres.map(genre => genre.name).join(', ')}</p>
+              <P>{movieItem.genres.map(genre => genre.name).join(', ')}</P>
             )}
           </div>
         </DivFlex>
@@ -67,10 +70,14 @@ export default function MovieDetails() {
       {movieItem !== null && (
         <UL>
           <LI>
-            <Link to="cast">Cast</Link>
+            <Link to="cast">
+              <Button>Cast</Button>
+            </Link>
           </LI>
           <LI>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews">
+              <Button>Reviews</Button>
+            </Link>
           </LI>
         </UL>
       )}

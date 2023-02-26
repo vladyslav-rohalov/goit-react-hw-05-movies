@@ -12,6 +12,7 @@ export default function Home() {
       .get(URL)
       .then(respopnse => {
         setTrendingMovies(respopnse.data.results);
+        console.log(respopnse.data.results);
       })
       .catch(function (error) {
         throw new Error(error);

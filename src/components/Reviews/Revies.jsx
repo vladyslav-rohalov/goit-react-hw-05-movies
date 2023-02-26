@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { List, Author, P, Post, Review } from './Reviews.styled';
 
 export default function Reviews() {
   const [reviews, setReview] = useState([]);
@@ -20,18 +21,19 @@ export default function Reviews() {
   }, [id]);
 
   return (
-    <ul>
+    <List>
       {reviews.length > 0 ? (
         reviews.map(review => {
           return (
-            <li key={review.id}>
-              Author: {review.author} <p>{review.content}</p>
-            </li>
+            <Review key={review.id}>
+              <Author>Author:{review.author}</Author>
+              <Post>{review.content}</Post>
+            </Review>
           );
         })
       ) : (
-        <p>We don't have any reviews for this movie</p>
+        <P>We don't have any reviews for this movie</P>
       )}
-    </ul>
+    </List>
   );
 }
