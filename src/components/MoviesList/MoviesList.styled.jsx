@@ -44,10 +44,10 @@ export const Movie = styled.li`
     transform: scale(1.03);
   }
   @media (min-width: 768px) {
-    flex-basis: calc((100% - 38px) / 2);
+    flex-basis: calc((100% - 70px) / 3);
   }
   @media (min-width: 1280px) {
-    flex-basis: calc((100% - 38px) / 3);
+    flex-basis: calc((100% - 58px) / 4);
 `;
 
 export const Img = styled.img`
@@ -55,10 +55,10 @@ export const Img = styled.img`
   height: 398px;
   width: 100%;
   @media (min-width: 768px) {
-    height: 455px;
+    height: 320px;
   }
   @media (min-width: 1280px) {
-    height: 574px;
+    height: 360px;
 `;
 
 export const P = styled.p`
